@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+import { DataProvider } from './contexts/Dataprovider';
+import { AuthProvider } from './contexts/AuthProvider';
+import firebase from './firebase'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <AuthProvider>
+    <DataProvider>
     <App />
+    </DataProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 
